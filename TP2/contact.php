@@ -26,7 +26,7 @@
                 <label for="message" class="form-label">Votre message</label>
                 <textarea class="form-control" placeholder="Exprimez vous" id="message" name="message"></textarea>
             </div>
-            <!-- Ajout champ d'upload ! -->
+            <!-- Ajout du champ d'upload ! -->
             <div class="mb-3">
                 <label for="screenshot" class="form-label">Votre capture d'écran</label>
                 <input type="file" class="form-control" id="screenshot" name="screenshot" />
