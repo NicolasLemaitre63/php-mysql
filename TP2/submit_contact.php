@@ -27,7 +27,7 @@
         <?php include_once('header.php'); ?>
         
         
-    <?php if(isset($_GET['email']) && isset($_GET['message'])) 
+    <?php if((isset($_GET['email']) || filter_var($_GET['email'], FILTER_VALIDATE_EMAIL)) || (isset($_GET['message']) || empty($_GET['message']))) 
     {
     ?>
         <h1>Message bien reçu !</h1>
@@ -38,7 +38,6 @@
                 <p class="card-text"><b>Message</b> : <?php echo $_GET['message']; ?> </p>
             </div>
         </div>
-    }
     <?php 
     }
     else
