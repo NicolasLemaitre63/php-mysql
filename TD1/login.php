@@ -7,12 +7,18 @@
             if (($user['email'] === $_POST['email']) && ($user['password'] === $_POST['password'])) 
             {
                 $_SESSION['LOGGED_USER'] = $user['email'];
+                setcookie('LOGGED_USER',$loggedUser['email'],time()+365*24*3600,"","",true,true);
             }
             else 
             {
                 $errorMessage = sprintf('Les informations envoyées ne permettent pas de vous identifier : (%s/%s)', $_POST['email'], $_POST['password']);
             }
         }
+    }
+
+    if (isset($_COOKIE['LOGGED_USER']))
+    {
+        $loggedUser = ['email' => $_COOKIE['LOGGED_USER'],];
     }
 ?>
 
