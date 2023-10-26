@@ -33,10 +33,6 @@
     $recipesStatement->execute();
     $recipes = $recipesStatement->fetchAll();
     ?>
-    <!-- On affiche chaque recette une à une -->
-    <?php foreach ($recipes as $recipe) : ?>
-    <p><?php echo $recipe['author']; ?> </p>
-    <?php endforeach; ?>
 
     <!-- Inclusion du formulaire de connexion -->
     <?php include_once('login.php'); ?>
