@@ -1,4 +1,5 @@
-<?php session_start(); // $_SESSION ?>
+<?php session_start(); // $_SESSION
+ini_set("display_errors",1); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,6 +47,7 @@
                 <h3><?php echo $recipe['title']; ?></h3>
                 <div><?php echo $recipe['recipe']; ?></div>
                 <i><?php echo displayAuthor($recipe['author'], $users); ?></i>
+                <a href="recipes/update.php?id=<?=$recipe['recipe_id']?>">Editer</a>
             </article>
         <?php endforeach ?>
     <?php endif; ?>
