@@ -14,7 +14,7 @@
           <a class="nav-link" href="contact.php">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="create.php">Ajouter une recette !</a>
+          <a class="nav-link" href="recipes/create.php">Ajouter une recette !</a>
         </li>
       </ul>
     </div>
