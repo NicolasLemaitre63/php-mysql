@@ -1,5 +1,13 @@
 <?php
 
+class Post 
+{
+    public $title;
+    public $frenchCreationDate;
+    public $content;
+    public $identifier;
+}
+
 function getPosts() {
     $database = dbConnect();
     $statement = $database->query(
@@ -7,12 +15,12 @@ function getPosts() {
     );
     $posts = [];
     while (($row = $statement->fetch())) {
-        $post = [
-            'title' => $row['title'],
-            'french_creation_date' => $row['french_creation_date'],
-            'content' => $row['content'],
-            'identifier' => $row['id'],
-        ];
+
+        $post = new Post();
+        $post->title = $row['title'];
+        $post->frenchCreationDate = $row['french_creation_date'];
+        $post->content = $row['content'];
+        $post->identifier = $row['id'];
 
         $posts[] = $post;
     }
@@ -28,19 +36,19 @@ function getPost($identifier) {
     $statement->execute([$identifier]);
 
     $row = $statement->fetch();
-    $post = [
-        'title' => $row['title'],
-        'french_creation_date' => $row['french_creation_date'],
-        'content' => $row['content'],
-        'identifier' => $row['id'],
-    ];
+    
+    $post = new Post();
+    $post->title = $row['title'];
+    $post->frenchCreationDate = $row['french_creation_date'];
+    $post->content = $row['content'];
+    $post->identifier = $row['id'];
 
     return $post;
 }
 
 function dbConnect()
 {
-    $database = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'blog', 'password');
+    $database = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'root', 'root');
 
     return $database;
 }
