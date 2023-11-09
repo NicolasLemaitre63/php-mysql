@@ -38,4 +38,4 @@ $insertRecipe->execute([
 'is_enabled' => 1, // 1 = true, 0 = false
 ]);
 
-?>
+include_once('../index.php');

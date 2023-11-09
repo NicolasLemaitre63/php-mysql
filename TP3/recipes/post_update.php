@@ -36,3 +36,5 @@ $insertRecipeStatement->execute([
     'recipe' => $recipe,
     'id' => $id,
 ]);
+
+include_once('../index.php');

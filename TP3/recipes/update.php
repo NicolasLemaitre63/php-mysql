@@ -34,10 +34,8 @@ $recipe = $retrieveRecipeStatement->fetch(PDO::FETCH_ASSOC);
     <div class="container">
 
     <?php include_once('../header.php'); ?>
-
-    <?php include_once($rootPath.'/header.php');?>
         <h1>Mettre à jour <?php echo($recipe['title']); ?></h1>
-        <form action="<?php echo($rootUrl.'post_update.php'); ?>" method="POST">
+        <form action="<?php echo('post_update.php'); ?>" method="POST">
             <div class="mb-3 visually-hidden">
                 <label for="id" class="form-label">Identifiant de la recette</label>
                 <input type="hidden" class="form-control" id="id" name="id" value="<?=$recipe['recipe_id'];?>">
