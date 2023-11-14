@@ -1,8 +1,11 @@
 <?php
+namespace Application\Lib\Database;
+use \PDO;
+
 class DatabaseConnection
 {
     public $database = null;
-    
+
     public function getConnection(): PDO
     {
         if ($this->database === null) {
