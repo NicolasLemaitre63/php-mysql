@@ -6,6 +6,11 @@ class Player
 {
     private $level;
 
+    public function __construct($level)
+    {
+        $this->level = $level;
+    }
+
     public function getLevel()  { return $this->level; }
     public function setLevel($level)  { $this->level = $level; }
 }
@@ -32,11 +37,8 @@ const RESULT_LOSER = -1;
 const RESULT_DRAW = 0;
 const RESULT_POSSIBILITIES = [RESULT_WINNER, RESULT_LOSER, RESULT_DRAW];
 
-$greg = new Player();
-$jade = new Player();
-
-$greg->setLevel(400);
-$jade->setLevel(800);
+$greg = new Player(400);
+$jade = new Player(800);
 
 $gregLevel = $greg->getLevel();
 $jadeLevel = $jade->getLevel();
