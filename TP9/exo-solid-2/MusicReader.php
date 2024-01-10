@@ -4,18 +4,18 @@
 require_once 'Mp3.php';
 require_once 'Ogg.php';
 
-class MusicReader
+abstract class MusicReader
 {
-    private $filename;
+    protected $filename;
 
     public function __construct($filename)
     {
         $this->filename = $filename;
     }
 
-    public function listen()
-    {
-        $extension = pathinfo($this->filename, PATHINFO_EXTENSION);
+    abstract public function listen();
+    
+        /* $extension = pathinfo($this->filename, PATHINFO_EXTENSION);
         switch ($extension) {
             case 'mp3':
                 $mp3 = new Mp3($this->filename);
@@ -27,6 +27,6 @@ class MusicReader
                 break;
             default:
                 throw new \Exception('Aucun lecteur trouvé pour cette musique');
-        }
-    }
+        } */
+    
 }
