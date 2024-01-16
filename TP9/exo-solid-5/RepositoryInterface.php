@@ -1,7 +1,6 @@
 <?php
 
-interface RepositoryInterface
-{
+interface RepositoryInterface {
     /**
      * Retrieve the user
      *
